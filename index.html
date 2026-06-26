@@ -139,6 +139,95 @@ onclick="selectMuscle('calves')">
 </div>
 </div>
 
+<!-- back view of the body -->
+<div class="figure-wrap">
+  <h3 class="figure-label">Back View</h3>
+<div class="figure-container" id="backFigure">
+<img src="images/body-back.png" alt="Back body muscle map" class="body-img" onerror="this.style.display='none'; document.getElementById('backFallback').style.display='flex';" />
+            
+
+<!-- clickable muscles on the back of the body -->
+<div class="hotspot" data-muscle="traps" style="top:12%; left:32%; width:36%; height:9%;" title="Traps" onclick="selectMuscle('traps')"></div>
+
+  <div class="hotspot" data-muscle="shoulders" style="top:14%; left:18%; width:13%; height:8%;" title="Shoulders" onclick="selectMuscle('shoulders')"></div>
+<div class="hotspot" data-muscle="shoulders" style="top:14%; left:69%; width:13%; height:8%;" title="Shoulders" onclick="selectMuscle('shoulders')"></div>
+
+<div class="hotspot" data-muscle="back" style="top:21%; left:28%; width:44%; height:18%;" title="Back (Lats)" onclick="selectMuscle('back')"></div>
+
+ <div class="hotspot" data-muscle="triceps" style="top:21%; left:15%; width:10%; height:16%;" title="Triceps" onclick="selectMuscle('triceps')"></div>
+    <div class="hotspot" data-muscle="triceps" style="top:21%; left:75%; width:10%; height:16%;" title="Triceps" onclick="selectMuscle('triceps')"></div>
+
+  <div class="hotspot" data-muscle="lower-back" style="top:39%; left:33%; width:34%; height:12%;" title="Lower Back" onclick="selectMuscle('lower-back')"></div>
+
+<div class="hotspot" data-muscle="glutes" style="top:51%; left:30%; width:40%; height:10%;" title="Glutes" onclick="selectMuscle('glutes')"></div>
+
+  <div class="hotspot" data-muscle="hamstrings" style="top:61%; left:29%; width:17%; height:14%;" title="Hamstrings" onclick="selectMuscle('hamstrings')"></div>
+<div class="hotspot" data-muscle="hamstrings" style="top:61%; left:54%; width:17%; height:14%;" title="Hamstrings" onclick="selectMuscle('hamstrings')"></div>
+
+<div class="hotspot" data-muscle="calves" style="top:76%; left:30%; width:14%; height:13%;" title="Calves" onclick="selectMuscle('calves')"></div>
+<div class="hotspot" data-muscle="calves" style="top:76%; left:56%; width:14%; height:13%;" title="Calves" onclick="selectMuscle('calves')"></div>
+
+<!-- labels to show up when a user hovers over a muscle zone -->
+  <span class="muscle-label" style="top:8%; left:38%;">Traps</span>
+<span class="muscle-label" style="top:10%; left:8%;">Shoulders</span>
+<span class="muscle-label" style="top:26%; left:38%;">Lats</span>
+  <span class="muscle-label" style="top:24%; left:2%;">Triceps</span>
+<span class="muscle-label" style="top:42%; left:36%;">Lower Back</span>
+<span class="muscle-label" style="top:53%; left:37%;">Glutes</span>
+<span class="muscle-label" style="top:64%; left:18%;">Hamstrings</span>
+  <span class="muscle-label" style="top:79%; left:19%;">Calves</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- result Panel on the right side -->
+<section class="result-panel" id="resultPanel">
+  <div class="result-placeholder" id="resultPlaceholder">
+<div class="placeholder-icon">👆</div>
+  <p><b>Click any muscle on the body to see results here</b></p>
+</div>
+<div class="result-content" id="resultContent" style="display:none;"></div>
+</section>
+
+</main>
+
+  <!-- weight Calculator Section (shown only in weight mode ofc) -->
+  <section class="calculator-section" id="calculatorSection" style="display:none;">
+<div class="calc-wrap">
+<h2>Equipment Weight Calculator</h2>
+  <p class="calc-desc">Enter your body weight and we'll suggest how much weight to start with on each exercise.</p>
+
+<div class="calc-form">
+  <label for="bodyWeight">Your Body Weight (kg)</label>
+<input type="number" id="bodyWeight" placeholder="e.g. 70" min="30" max="200" />
+
+  <label for="fitnessLevel">Your fitness level</label>
+<select id="fitnessLevel">
+  <option value="beginner">Beginner (0–6 months)</option>
+<option value="intermediate">Intermediate (6 months – 2 years)</option>
+  <option value="advanced">Advanced (2+ years)</option>
+</select>
+
+<button class="calc-btn" onclick="calculateWeights()">Calculate Weights</button>
+</div>
+
+<div id="calcResults" class="calc-results" style="display:none;"></div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+<button class="modal-close" onclick="closeModal()">✕</button>
+<div class="modal-body" id="modalBody"></div>
+</div>
+</div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
 
 
      
