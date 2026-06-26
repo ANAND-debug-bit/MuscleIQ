@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MuscleIQ - Know the muscle. Master the movement</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+      <h1>💪 MuscleIQ</h1>
+      <p class="tagline"><b>Click a muscle to get started</b></p>
+    </div>
+</header>
+
+
+<!--The three main website purpose to solve -->
+<div class="mode-tabs">
+
+<button class="tab-btn active" data-mode="workout" onclick="switchMode('workout')">
+ 🏋️ <b>Workout Plan</b>
+</button>
+
+<button class="tab-btn" data-mode="diet" onclick="switchMode('diet')">
+🥗<b> Diet & Food </b>
+</button>
+
+<button class="tab-btn" data-mode="weight" onclick="switchMode('weight')">
+⚖️ <b>Weight Calculator</b>
+</button>
+</div>
+
+<main class="app-body">
+
+<!-- muscular body which will be shown  -->
+<section class="body-map-section" id="bodyMapSection">
+<div class="body-figures">
+
+
+  <!-- front view of the body -->
+<div class="figure-wrap">
+<h3 class="figure-label">Front View</h3>
+
+<div class="figure-container" id="frontFigure">
+
+<img
+src="images/body-front.png" alt="Front body muscle mapping img" class="body-img"
+onerror="this.style.display='none'; document.getElementById('frontFallback').style.display='flex';" />
+
+  <!-- clickable muscles on the front of the body -->
+
+<div class="hotspot" id="hs-shoulders-front"
+data-muscle="shoulders"
+style="top:14%; left:20%; width:12%; height:7%;" title="Shoulders"
+onclick="selectMuscle('shoulders')"> </div>
+
+<div class="hotspot" id="hs-shoulders-front-r" data-muscle="shoulders"
+style="top:14%; left:68%; width:12%; height:7%;" title="Shoulders"
+onclick="selectMuscle('shoulders')">
+</div>
+
+<div class="hotspot" id="hs-chest"
+  data-muscle="chest"
+style="top:19%; left:32%; width:36%; height:12%;" title="Chest"
+onclick="selectMuscle('chest')">
+</div>
+
+<div class="hotspot" id="hs-bicep-l"
+data-muscle="biceps"
+style="top:21%; left:16%; width:10%; height:15%;" title="Biceps"
+onclick="selectMuscle('biceps')">
+</div>
+
+<div class="hotspot" id="hs-bicep-r"
+  data-muscle="biceps"
+style="top:21%; left:74%; width:10%; height:15%;" title="Biceps"
+  onclick="selectMuscle('biceps')">
+</div>
+
+  <div class="hotspot" id="hs-abs"
+data-muscle="abs"
+style="top:32%; left:34%; width:32%; height:18%;" title="Abs"
+onclick="selectMuscle('abs')">
+</div>
+
+<div class="hotspot" id="hs-forearms-l"
+data-muscle="forearms"
+style="top:37%; left:13%; width:9%; height:13%;"
+title="Forearms"
+onclick="selectMuscle('forearms')">
+</div>
+
+  <div class="hotspot" id="hs-forearms-r"
+data-muscle="forearms"
+style="top:37%; left:78%; width:9%; height:13%;"
+  title="Forearms"
+onclick="selectMuscle('forearms')">
+  </div>
+
+  <div class="hotspot" id="hs-quads-l"
+data-muscle="quads"
+style="top:54%; left:30%; width:16%; height:18%;" title="Quads"
+  onclick="selectMuscle('quads')">
+</div>
+
+<div class="hotspot" id="hs-quads-r"
+  data-muscle="quads"
+style="top:54%; left:54%; width:16%; height:18%;" title="Quads"
+onclick="selectMuscle('quads')">
+  </div>
+
+<div class="hotspot" id="hs-calves-l-front"
+data-muscle="calves"
+  style="top:74%; left:31%; width:13%; height:14%;"
+title="Calves"
+onclick="selectMuscle('calves')">
+</div>
+
+  <div class="hotspot" id="hs-calves-r-front"
+data-muscle="calves"
+style="top:74%; left:56%; width:13%; height:14%;" title="Calves"
+onclick="selectMuscle('calves')">
+</div>
+
+
+<!-- labels to show up when a user hovers over a muscle zone -->
+  <span class="muscle-label" style="top:10%; left:10%;">Shoulders</span>
+  <span class="muscle-label" style="top:22%; left:38%;">Chest</span>
+<span class="muscle-label" style="top:26%; left:5%;">Biceps</span>
+<span class="muscle-label" style="top:38%; left:37%;">Abs</span>
+<span class="muscle-label" style="top:42%; left:2%;">Forearms</span>
+  <span class="muscle-label" style="top:58%; left:22%;">Quads</span>
+<span class="muscle-label" style="top:78%; left:22%;">Calves</span>
+
+</div>
+</div>
+
+
+
+     
