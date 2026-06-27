@@ -271,6 +271,97 @@ foods: [
       { name: "Almonds", benefit: "Magnesium supports nerve-muscle connections", serving: "Handful daily", img: "food/almonds.jpg" },
       { name: "Oranges", benefit: "Vitamin C for collagen (tendon health)", serving: "1–2 daily", img: "food/oranges.jpg" },
       { name: "Water", benefit: "Dehydration directly reduces grip strength", serving: "3–4 litres per day", img: "food/water.jpg" }
-]
-}
-};
+] }};
+
+const equipmentData = [
+{ name: "Barbell Bench Press",
+muscle: "Chest",
+beginner: 0.5,
+intermediate: 0.75,
+advanced: 1.0,
+note: "Start lighter and focus on form first" },
+  
+
+{ name: "Barbell Squat",
+muscle: "Quads / Legs",
+beginner: 0.5,
+intermediate: 0.9,
+advanced: 1.4,
+note: "Add weight slowly — form is everything here"
+},
+  
+{ name: "Barbell Deadlift",
+muscle: "Back / Hamstrings",
+beginner: 0.7,
+intermediate: 1.0,
+advanced: 1.7,
+note: "Most people can lift more here than bench or squat" },
+  {
+
+name: "Overhead Press (Barbell)",
+muscle: "Shoulders",
+    beginner: 0.3,
+intermediate: 0.55,
+advanced: 0.75,
+note: "Much less than bench press — be honest about your level" },
+  
+
+   { name: "Barbell Row",
+    muscle: "Back",
+    beginner: 0.45,
+    intermediate: 0.7,
+    advanced: 1.0,
+    note: "Don't round your lower back"},
+  
+    { name: "Lat Pulldown",
+muscle: "Back / Lats",
+beginner: 0.45,
+intermediate: 0.65,
+advanced: 0.85,
+note: "Weight in kg on the cable machine" },
+  
+{ name: "Leg Press",
+muscle: "Quads / Glutes",
+beginner: 1.0,
+intermediate: 1.8,
+advanced: 2.5,
+note: "You can push more on leg press than squats" },
+  
+{ name: "Dumbbell Curl (each arm)",
+muscle: "Biceps",
+beginner: 0.1,
+intermediate: 0.15,
+advanced: 0.2,
+note: "Per dumbbell — so 70kg person uses ~7kg dumbbell to start" },
+  
+{ name: "Tricep Pushdown",
+muscle: "Triceps",
+ beginner: 0.2,
+intermediate: 0.35,
+advanced: 0.5,
+note: "Cable weight"
+},
+ 
+{ name: "Romanian Deadlift",
+muscle: "Hamstrings",
+beginner: 0.5,
+intermediate: 0.75,
+advanced: 1.1,
+note: "Go lighter than deadlift to feel the stretch"
+},
+
+{ name: "Calf Raise Machine",
+muscle: "Calves",
+beginner: 0.6,
+    intermediate: 1.0,
+    advanced: 1.5,
+    note: "Calves can handle relatively more weight than most" },
+  
+{
+    name: "Dumbbell Lateral Raise (each arm)",
+    muscle: "Shoulders",
+    beginner: 0.06,
+    intermediate: 0.1,
+    advanced: 0.14,
+    note: "Very light — most people start with 5–8kg dumbbells"
+} ];
