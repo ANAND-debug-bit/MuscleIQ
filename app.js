@@ -136,15 +136,74 @@ html += "</div>";
 
 return html; }
 
+// the weight calculator — takes body weight and gym experience lvl and spits out a table of suggested starting weights for each exercise
+function calculateWeights() {
+  var bwInput = document.getElementById("bodyWeight");
+  var levelInput = document.getElementById("fitnessLevel");
+var resultsDiv = document.getElementById("calcResults");
+var bw = parseFloat(bwInput.value);
+
+// 20 to 300 kg is a pretty reasonable human range
+if (!bw || bw < 20 || bw > 300) {
+    alert("Please enter a valid body weight between 20 and 300 kg");
+    return; }
+
+var level = levelInput.value; // beginner ,, intermediate ,advanced
+var html = "";
+html += "<h3>Suggested Starting Weights for " + bw + "kg person (" + level + ")</h3>";
+html +=
+    '<p class="calc-note">These are guidelines only — always start lighter and increase gradually</p>';
+    html += '<div class="weight-table-wrap">';
+html += '<table class="weight-table">';
+  html += "<thead>";
+  html += "<tr>";
+html += "<th>Exercise</th>";
+html += "<th>Muscle</th>";
+html += "<th>Suggested Weight</th>";
+html += "<th>Note</th>";
+  html += "</tr>";
+html += "</thead>";
+html += "<tbody>";
+
+// going through every exercise in our equipment list and multiply body weight by the level-specific multiplier to get a suggestion for each equipment ofc
+for (var i = 0; i < equipmentData.length; i++) {
+var item = equipmentData[i];
+  var multiplier = item[level]; 
+    var weight = bw * multiplier;
+  weight = Math.round(weight);
+
+  // rounding off to nearest 2.5 bcz that's how gym weights work
+var roundedWeight = Math.round(weight / 2.5) * 2.5;
+
+  html += "<tr>";
+  html += "<td><strong>" + item.name + "</strong></td>";
+  html += '<td><span class="muscle-tag">' + item.muscle + "</span></td>";
+  html += '<td><span class="weight-value">' + roundedWeight + " kg</span></td>";
+  html += '<td class="note-cell">' + item.note + "</td>";
+html += "</tr>"; }
+
+  html += "</tbody>";
+  html += "</table>";
+  html += "</div>";
+  html +=
+    '<p class="calc-disclaimer">⚠️ Always warm up first. These numbers are starting points — adjust based on how the weight feels. If a weight feels too light, go up. If you\'re struggling with form, go down.</p>';
+  resultsDiv.innerHTML = html;
+  resultsDiv.style.display = "block";
+  resultsDiv.scrollIntoView({ behavior: "smooth" }); 
+}
 
 
+function openModal(content) { document.getElementById("modalBody").innerHTML = content;
+document.getElementById("modalOverlay").style.display = "flex"; }
 
-
-
-
-
-
-
+function closeModal() {
+  document.getElementById("modalOverlay").style.display = "none";
+}
+document.addEventListener("keydown", function (e) {
+if (e.key === "Escape") {
+    closeModal();
+}
+});
 
 
 
